@@ -1,0 +1,3 @@
+{
+  "presets": ["@launchpadlab/babel-preset/es6"]
+}
