@@ -1,4 +1,5 @@
 [![npm version](https://badge.fury.io/js/figaro-js.svg)](https://badge.fury.io/js/figaro-js)
+[![Build Status](https://travis-ci.org/LaunchPadLab/figaro-js.svg?branch=master)](https://travis-ci.org/LaunchPadLab/figaro-js)
 
 # figaro-js
 
