@@ -5,5 +5,5 @@ lib
 !/tmp/.keep
 npm-debug.log*
 node_modules
-coverage
 yarn-error.log
+package-lock.json

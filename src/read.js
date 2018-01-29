@@ -2,8 +2,7 @@ import path from 'path'
 import { 
   findRoot,
   omitObjectValues,
-  readYamlFile, 
-  log,
+  readYamlFile,
 } from './utils'
 
 function getDefaultFilename () {
@@ -15,11 +14,12 @@ function getDefaultEnvironment () {
   return process.env.NODE_ENV || 'development'
 }
 
-function readConfigFile (filename) {
+function readConfigFile (filename, log=log) {
   try {
     return readYamlFile(filename)
   } catch (e) {
-    log(`Figaro: (WARNING) file ${ filename } not loaded.`)
+    // eslint-disable-next-line no-console
+    console.warn(`Figaro: (WARNING) file ${ filename } not loaded.`)
     return {}
   }
 }

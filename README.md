@@ -4,6 +4,6 @@
 
 Emulates the bahavior of [figaro](https://github.com/laserlemon/figaro).
 
-## Documentation 
+## Documentation
 
 Documentation and usage info can be found in [docs.md](docs.md).

@@ -1,7 +1,7 @@
 {
   "name": "figaro-js",
   "version": "1.0.0",
-  "description": "Env variable management with Javascript",
+  "description": "Env variable management in JS",
   "main": "lib/index.js",
   "repository": "launchpadlab/figaro-js",
   "homepage": "https://github.com/launchpadlab/figaro-js",
