@@ -3,8 +3,34 @@
 
 # figaro-js
 
-Emulates the bahavior of [figaro](https://github.com/laserlemon/figaro).
+This package emulates the behavior of [figaro](https://github.com/laserlemon/figaro) for rails. It loads environment variables from an `application.yml` file into `process.env`.
+
+## Quickstart
+
+In `./config/application.yml`:
+
+```yml
+SOME_VAR: 'FOO'
+
+development:
+  IS_DEV: true
+
+production:
+  IS_PROD: true
+```
+
+In your start script:
+
+```js
+
+const Figaro = require('figaro-js')
+
+Figaro.load()
+
+console.log(process.env.SOME_VAR) // -> 'FOO'
+
+```
 
 ## Documentation
 
-Documentation and usage info can be found in [docs.md](docs.md).
+Full module API and usage info can be found in [docs.md](docs.md).
