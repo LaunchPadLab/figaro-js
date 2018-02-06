@@ -44,16 +44,7 @@ import {
  *
 **/
 
-function getDefaultFilePath () {
-  const projectRoot = findRoot()
-  return path.resolve(projectRoot, 'config/application.yml')
-}
-
-function getDefaultEnvironment () {
-  return process.env.NODE_ENV || 'development'
-}
-
-function readConfigFile (filePath, log=log) {
+function readConfigFile (filePath) {
   try {
     return readYamlFile(filePath)
   } catch (e) {
@@ -64,8 +55,8 @@ function readConfigFile (filePath, log=log) {
 }
 
 function read ({
-  path:filePath=getDefaultFilePath(),
-  environment=getDefaultEnvironment(),
+  path:filePath=path.resolve('config/application.yml'),
+  environment=process.env.NODE_ENV || 'development',
 }={}) {
   // Add vars from application.yml
   const allVars = readConfigFile(filePath)
