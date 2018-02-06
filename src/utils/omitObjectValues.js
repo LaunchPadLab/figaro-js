@@ -1,4 +1,4 @@
-import omitBy from 'lodash/omitBy'
+import omitBy from 'lodash.omitby'
 
 // Omits keys from an object that have an object as their value.
 

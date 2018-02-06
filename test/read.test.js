@@ -6,7 +6,7 @@ import {
   CONFIG_FILE_PATH,
 } from './fixtures'
 
-test('filename defaults to {project_root}/config/application.yml', () => {
+test('path defaults to {project_root}/config/application.yml', () => {
   const warn = jest.spyOn(console, 'warn')
   read()
   expect(warn).toHaveBeenCalledWith(`Figaro: (WARNING) file ${ PROJECT_ROOT }/config/application.yml not loaded.`)
@@ -14,7 +14,7 @@ test('filename defaults to {project_root}/config/application.yml', () => {
 
 test('returns empty object if file is not found', () => {
   const env = read({
-    filename: '',
+    path: '',
   })
   expect(env).toEqual({})
 })
@@ -22,7 +22,7 @@ test('returns empty object if file is not found', () => {
 test('environment defaults to development', () => {
   process.env.NODE_ENV = undefined
   const env = read({
-    filename: CONFIG_FILE_PATH
+    path: CONFIG_FILE_PATH
   })
   expect(env).toEqual(DEVELOPMENT_ENV)
   process.env.NODE_ENV = 'test'
@@ -31,7 +31,7 @@ test('environment defaults to development', () => {
 test('environment reads from NODE_ENV', () => {
   process.env.NODE_ENV = 'development'
   const env = read({
-    filename: CONFIG_FILE_PATH
+    path: CONFIG_FILE_PATH
   })
   expect(env).toEqual(DEVELOPMENT_ENV)
   process.env.NODE_ENV = 'test'
@@ -39,7 +39,7 @@ test('environment reads from NODE_ENV', () => {
 
 test('accepts custom environment option', () => {
   const env = read({
-    filename: CONFIG_FILE_PATH, 
+    path: CONFIG_FILE_PATH, 
     environment: 'production'
   })
   expect(env).toEqual(PRODUCTION_ENV)

@@ -15,6 +15,7 @@
     "build": "mkdir -p lib && babel src --out-dir lib --no-comments --minified",
     "build:development": "mkdir -p lib && babel src --watch --out-dir lib",
     "clean": "rm -rf lib",
+    "docs": "documentation build src/index.js -f md -o docs.md",
     "lint": "eslint src --max-warnings=0",
     "precommit": "yarn run docs && git add docs.md",
     "prepublish": "npm run clean && npm run build",
@@ -37,7 +38,7 @@
     "@launchpadlab/eslint-config": "^2.2.3",
     "babel-cli": "^6.22.2",
     "codeclimate-test-reporter": "^0.5.0",
-    "documentation": "^5.3.3",
+    "documentation": "^5.3.5",
     "eslint": "^4.12.1",
     "husky": "^0.14.3",
     "jest": "^22.0.0"

@@ -7,7 +7,7 @@ import {
 test('adds new env object to process.env', () => {
   const priorProcessEnv = { ...process.env }
   load({
-    filename: CONFIG_FILE_PATH,
+    path: CONFIG_FILE_PATH,
     environment: 'development',
   })
   expect(process.env).toEqual({ ...priorProcessEnv, ...DEVELOPMENT_ENV })

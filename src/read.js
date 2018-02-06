@@ -5,31 +5,61 @@ import {
   readYamlFile,
 } from './utils'
 
-function getDefaultFilename () {
-  const projectRoot = findRoot()
-  return path.resolve(projectRoot, 'config/application.yml')
-}
+/**
+ * A function that loads env variables from a file and returns an object containing them.
+ * The file may contain plain key-value pairs ("shared" variables) or key-values pairs nested under environment keys.
+ * The latter will only be loaded if the current environment matches the environment key.
+ * 
+ * **Options**
+ * 
+ * `read` may be passed an options object containing the following keys:
+ * - `path`: The path to the config file (default: './config/application.yml')
+ * - `environment`: The string name of the current environment (default: 'development')
+ *
+ * @name read
+ * @type Function
+ * @param {object} options - Options for the function as specified above.
+ *
+ * @example
+ * 
+ * // Let's say we've got an application.yml that looks like:
+ * // SOME_VAR: 'FOO'
+ * // development:
+ * //   IS_DEV: true
+ * // production:
+ * //   IS_PROD: true
+ *
+ * const Figaro = require('figaro-js')
+ * const path = require('path')
+ * 
+ * const myEnv = Figaro.read({
+ *    path: path.resolve(__dirname, './application.yml')
+ * })
+ * 
+ * console.log(myEnv) 
+ * // -> {
+ * //   SOME_VAR: 'FOO',
+ * //   IS_DEV: true
+ * // }
+ *
+**/
 
-function getDefaultEnvironment () {
-  return process.env.NODE_ENV || 'development'
-}
-
-function readConfigFile (filename, log=log) {
+function readConfigFile (filePath) {
   try {
-    return readYamlFile(filename)
+    return readYamlFile(filePath)
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.warn(`Figaro: (WARNING) file ${ filename } not loaded.`)
+    console.warn(`Figaro: (WARNING) file ${ filePath } not loaded.`)
     return {}
   }
 }
 
 function read ({
-  filename=getDefaultFilename(),
-  environment=getDefaultEnvironment(),
+  path:filePath=path.resolve('config/application.yml'),
+  environment=process.env.NODE_ENV || 'development',
 }={}) {
   // Add vars from application.yml
-  const allVars = readConfigFile(filename)
+  const allVars = readConfigFile(filePath)
   // Get shared vars
   const sharedVars = omitObjectValues(allVars)
   // Get environment vars
