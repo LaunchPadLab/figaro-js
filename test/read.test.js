@@ -4,6 +4,7 @@ import {
   PRODUCTION_ENV,
   PROJECT_ROOT,
   CONFIG_FILE_PATH,
+  JSON_CONFIG_FILE_PATH,
 } from './fixtures'
 
 test('path defaults to {project_root}/config/application.yml', () => {
@@ -43,5 +44,13 @@ test('accepts custom environment option', () => {
     environment: 'production'
   })
   expect(env).toEqual(PRODUCTION_ENV)
+})
+
+test('can read json file', () => {
+  process.env.NODE_ENV = 'development'
+  const env = read({
+    path: JSON_CONFIG_FILE_PATH
+  })
+  expect(env).toEqual(DEVELOPMENT_ENV)
   process.env.NODE_ENV = 'test'
 })

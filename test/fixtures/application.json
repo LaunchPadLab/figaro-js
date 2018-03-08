@@ -1,0 +1,9 @@
+{
+  "SHARED_VAR": "SHARED_VAR",
+  "development": {
+    "DEVELOPMENT_VAR": "DEVELOPMENT_VAR"
+  },
+  "production": {
+    "PRODUCTION_VAR": "PRODUCTION_VAR"
+  }
+}
