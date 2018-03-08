@@ -1,6 +1,5 @@
 import path from 'path'
 import { 
-  findRoot,
   omitObjectValues,
   readYamlFile,
 } from './utils'
