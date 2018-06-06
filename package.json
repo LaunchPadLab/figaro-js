@@ -1,6 +1,6 @@
 {
   "name": "figaro-js",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Env variable management in JS",
   "main": "lib/index.js",
   "repository": "launchpadlab/figaro-js",
@@ -29,6 +29,7 @@
     "lib/"
   ],
   "dependencies": {
+    "find-root": "^1.1.0",
     "js-yaml": "^3.10.0",
     "lodash.omitby": "^4.6.0"
   },
