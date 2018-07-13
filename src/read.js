@@ -63,7 +63,7 @@ function read ({
   const sharedVars = omitObjectValues(allVars)
   // Get environment vars
   const environmentVars = allVars[environment] || {}
-  return { ...environmentVars, ...sharedVars }
+  return { ...sharedVars, ...environmentVars }
 }
 
 export default read
