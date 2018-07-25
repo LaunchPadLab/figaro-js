@@ -48,7 +48,7 @@ function readConfigFile (filePath) {
     return readYamlFile(filePath)
   } catch (e) {
     // eslint-disable-next-line no-console
-    console.warn(`Figaro: (WARNING) file ${ filePath } not loaded.`)
+    console.warn(`Figaro: (WARNING) file ${ filePath } not loaded: ${ e.message }`)
     return {}
   }
 }
