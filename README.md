@@ -30,7 +30,7 @@ Figaro.load()
 console.log(process.env.SOME_VAR) // -> 'FOO'
 
 ```
-Again, using ES6 syntax:
+Using ES6 syntax:
 ```js
 
 import * as Figaro from 'figaro-js'
