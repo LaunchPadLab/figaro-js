@@ -1,2 +1,2 @@
-SHARED_VAR: "SHARED_VAR"
-SHARED_VAR: "OVERRIDE_VAR"
+SHARED_VAR: "shared_var"
+SHARED_VAR: "override_var"

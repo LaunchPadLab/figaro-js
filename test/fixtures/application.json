@@ -1,11 +1,11 @@
 {
-  "SHARED_VAR": "SHARED_VAR",
-  "OVERRIDE_VAR": "OVERRIDE_VAR",
+  "SHARED_VAR": "shared_var",
+  "OVERRIDE_VAR": "override_var",
   "development": {
-    "DEVELOPMENT_VAR": "DEVELOPMENT_VAR"
+    "DEVELOPMENT_VAR": "development_var"
   },
   "production": {
-    "PRODUCTION_VAR": "PRODUCTION_VAR",
-    "OVERRIDE_VAR": "PRODUCTION_OVERRIDE_VAR"
+    "PRODUCTION_VAR": "production_var",
+    "OVERRIDE_VAR": "production_override_var"
   }
 }

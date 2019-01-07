@@ -6,14 +6,14 @@ export const INVALID_CONFIG_FILE_PATH = path.resolve(__dirname, './invalid.appli
 export const JSON_CONFIG_FILE_PATH = path.resolve(__dirname, './application.json')
 
 export const DEVELOPMENT_ENV = {
-  SHARED_VAR: 'SHARED_VAR',
-  DEVELOPMENT_VAR: 'DEVELOPMENT_VAR',
-  OVERRIDE_VAR: 'OVERRIDE_VAR',
+  SHARED_VAR: 'shared_var',
+  DEVELOPMENT_VAR: 'development_var',
+  OVERRIDE_VAR: 'override_var',
 }
 
 export const PRODUCTION_ENV = {
-  SHARED_VAR: 'SHARED_VAR',
-  PRODUCTION_VAR: 'PRODUCTION_VAR',
-  OVERRIDE_VAR: 'PRODUCTION_OVERRIDE_VAR'
+  SHARED_VAR: 'shared_var',
+  PRODUCTION_VAR: 'production_var',
+  OVERRIDE_VAR: 'production_override_var'
 }
 
