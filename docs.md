@@ -2,10 +2,22 @@
 
 ### Table of Contents
 
+-   [CLI](#cli)
 -   [load](#load)
 -   [read](#read)
 -   [requireKeys](#requirekeys)
--   [CLI](#cli)
+
+## CLI
+
+This module exposes a CLI that can be run with `yarn figaro`.
+
+Using the `heroku:set` command, you can set values from your configuration file all at once:
+
+`$ yarn figaro heroku:set -e production`
+
+For more information:
+
+`$ yarn figaro -h`
 
 ## load
 
@@ -100,15 +112,3 @@ if (requireKeys('MY_KEY', 'ANOTHER_KEY')) {
 
 // Above will throw if 'MY_KEY', 'ANOTHER_KEY' are not keys in process.env.
 ```
-
-## CLI
-
-This module exposes a CLI that can be run with `yarn figaro`.
-
-Using the `heroku:set` command, you can set values from your configuration file all at once:
-
-`$ yarn figaro heroku:set -e production`
-
-For more information:
-
-`$ yarn figaro -h`
