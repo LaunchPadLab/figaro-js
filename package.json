@@ -18,7 +18,7 @@
     "build": "mkdir -p lib && babel src --out-dir lib --no-comments --minified",
     "build:development": "mkdir -p lib && babel src --watch --out-dir lib",
     "clean": "rm -rf lib",
-    "docs": "documentation build src/index.js -f md -o docs.md",
+    "docs": "documentation build src/ src/cli -f md -o docs.md",
     "lint": "eslint src --max-warnings=0",
     "precommit": "yarn run docs && git add docs.md",
     "prepublish": "npm run clean && npm run build",
