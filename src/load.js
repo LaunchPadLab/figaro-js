@@ -34,7 +34,7 @@ import read from './read'
 
 function load (options) {
   const readEnv = read(options)
-  process.env = { ...process.env, ...readEnv }
+  Object.assign(process.env, readEnv)
 }
 
 export default load

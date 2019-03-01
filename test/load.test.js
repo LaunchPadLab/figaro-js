@@ -21,3 +21,12 @@ test('overwrites existing vars in process.env', () => {
   })
   expect(process.env.SHARED_VAR).toEqual(DEVELOPMENT_ENV.SHARED_VAR)
 })
+
+test('modifies process.env in place', () => {
+  const processEnvReference = process.env
+  load({
+    path: CONFIG_FILE_PATH,
+    environment: 'development',
+  })
+  expect(process.env).toBe(processEnvReference)
+})
