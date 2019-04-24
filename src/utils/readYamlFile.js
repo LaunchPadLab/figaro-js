@@ -8,8 +8,10 @@ function readYamlFile (filePath) {
     return yaml.load(fs.readFileSync(filePath, 'utf8')) || {}
   } catch (e) {
     // Pretty-print file-not-found errors
-    if (e.code === 'ENOENT') throw new Error('File not found.')
-    throw e
+    if (e.code !== 'ENOENT') throw e
+    // eslint-disable-next-line
+    console.warn(`Figaro: config file not found, skipping load (path=${ filePath })`)
+    return {}
   }
 }
 
