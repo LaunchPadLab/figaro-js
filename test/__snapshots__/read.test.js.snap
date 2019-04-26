@@ -1,3 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`path defaults to {project_root}/config/application.yml 1`] = `"Figaro: config file not found, skipping load (path=/Users/dpikt/Launchpad/figaro-js/config/application.yml)"`;

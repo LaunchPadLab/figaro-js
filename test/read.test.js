@@ -5,6 +5,7 @@ import {
   CONFIG_FILE_PATH,
   INVALID_CONFIG_FILE_PATH,
   JSON_CONFIG_FILE_PATH,
+  PROJECT_ROOT,
 } from './fixtures'
 
 // Global console.warn mock
@@ -15,7 +16,7 @@ const getLastCall = fn => last(fn.mock.calls)
 test('path defaults to {project_root}/config/application.yml', () => {
   read()
   const warning = getLastCall(warn)[0]
-  expect(warning).toMatchSnapshot()
+  expect(warning).toEqual(`Figaro: config file not found, skipping load (path=${ PROJECT_ROOT }/config/application.yml)`)
 })
 
 test('returns empty object if file is not found', () => {
