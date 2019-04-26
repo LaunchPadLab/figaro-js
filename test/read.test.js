@@ -2,10 +2,10 @@ import { read } from '../src'
 import { 
   DEVELOPMENT_ENV,
   PRODUCTION_ENV,
-  PROJECT_ROOT,
   CONFIG_FILE_PATH,
   INVALID_CONFIG_FILE_PATH,
   JSON_CONFIG_FILE_PATH,
+  PROJECT_ROOT,
 } from './fixtures'
 
 // Global console.warn mock
@@ -16,7 +16,7 @@ const getLastCall = fn => last(fn.mock.calls)
 test('path defaults to {project_root}/config/application.yml', () => {
   read()
   const warning = getLastCall(warn)[0]
-  expect(warning).toEqual(`Figaro: (WARNING) file ${ PROJECT_ROOT }/config/application.yml not loaded: File not found.`)
+  expect(warning).toEqual(`Figaro: config file not found, skipping load (path=${ PROJECT_ROOT }/config/application.yml)`)
 })
 
 test('returns empty object if file is not found', () => {
@@ -26,12 +26,10 @@ test('returns empty object if file is not found', () => {
   expect(env).toEqual({})
 })
 
-test('logs relevant error if file is invalid', () => {
-  read({
+test('throws exception if file is invalid', () => {
+  expect(() => read({
     path: INVALID_CONFIG_FILE_PATH,
-  })
-  const warning = getLastCall(warn)[0]
-  expect(warning).toContain(`duplicated mapping key at line 2, column 1:`)
+  })).toThrow()
 })
 
 test('environment defaults to development', () => {

@@ -43,22 +43,12 @@ import {
  *
 **/
 
-function readConfigFile (filePath) {
-  try {
-    return readYamlFile(filePath)
-  } catch (e) {
-    // eslint-disable-next-line no-console
-    console.warn(`Figaro: (WARNING) file ${ filePath } not loaded: ${ e.message }`)
-    return {}
-  }
-}
-
 function read ({
   path:filePath=path.resolve('config/application.yml'),
   environment=process.env.NODE_ENV || 'development',
 }={}) {
   // Add vars from application.yml
-  const allVars = readConfigFile(filePath)
+  const allVars = readYamlFile(filePath)
   // Get shared vars
   const sharedVars = omitObjectValues(allVars)
   // Get environment vars
