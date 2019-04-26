@@ -44,3 +44,7 @@ console.log(process.env.SOME_VAR) // -> 'FOO'
 ## Documentation
 
 Full module API and usage info can be found in [docs.md](docs.md).
+
+
+## Migration Guides
+- [v2.0.0](migration-guides/v2.0.0.md)
