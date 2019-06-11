@@ -4,3 +4,4 @@ export findRoot from 'find-root'
 
 export omitObjectValues from './omitObjectValues'
 export readYamlFile from './readYamlFile'
+export toStringValues from './toStringValues'

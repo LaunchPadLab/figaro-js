@@ -2,6 +2,7 @@ import path from 'path'
 import { 
   omitObjectValues,
   readYamlFile,
+  toStringValues,
 } from './utils'
 
 /**
@@ -53,7 +54,7 @@ function read ({
   const sharedVars = omitObjectValues(allVars)
   // Get environment vars
   const environmentVars = allVars[environment] || {}
-  return { ...sharedVars, ...environmentVars }
+  return toStringValues({ ...sharedVars, ...environmentVars })
 }
 
 export default read

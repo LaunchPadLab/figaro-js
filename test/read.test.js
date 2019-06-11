@@ -66,3 +66,12 @@ test('can read json file', () => {
   expect(env).toEqual(DEVELOPMENT_ENV)
   process.env.NODE_ENV = 'test'
 })
+
+test('parses all values as strings', () => {
+  process.env.NODE_ENV = 'development'
+  const env = read({
+    path: CONFIG_FILE_PATH
+  })
+  expect(typeof env.BOOLEAN_VAR).toBe('string')
+  expect(typeof env.NUMBER_VAR).toBe('string')
+})

@@ -1,6 +1,8 @@
 {
   "SHARED_VAR": "shared_var",
   "OVERRIDE_VAR": "override_var",
+  "BOOLEAN_VAR": true,
+  "NUMBER_VAR": 1,
   "development": {
     "DEVELOPMENT_VAR": "development_var"
   },

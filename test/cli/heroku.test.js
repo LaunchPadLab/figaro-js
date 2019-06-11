@@ -23,10 +23,10 @@ function callCLI (command) {
 describe('heroku cli', () => {
   test('builds upload command correctly', () => {
     const executedCommand = callCLI(`heroku:set --app TEST --path ${ CONFIG_FILE_PATH }`)
-    expect(executedCommand).toEqual('heroku config:set SHARED_VAR=shared_var OVERRIDE_VAR=override_var --app=TEST')
+    expect(executedCommand).toEqual('heroku config:set SHARED_VAR=shared_var OVERRIDE_VAR=override_var BOOLEAN_VAR=true NUMBER_VAR=1 --app=TEST')
   })
   test('gets correct env when specified', () => {
     const executedCommand = callCLI(`heroku:set -e production --path ${ CONFIG_FILE_PATH }`)
-    expect(executedCommand).toEqual('heroku config:set SHARED_VAR=shared_var OVERRIDE_VAR=production_override_var PRODUCTION_VAR=production_var')
+    expect(executedCommand).toEqual('heroku config:set SHARED_VAR=shared_var OVERRIDE_VAR=production_override_var BOOLEAN_VAR=true NUMBER_VAR=1 PRODUCTION_VAR=production_var')
   })
 })
