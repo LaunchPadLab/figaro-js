@@ -74,4 +74,5 @@ test('parses all values as strings', () => {
   })
   expect(typeof env.BOOLEAN_VAR).toBe('string')
   expect(typeof env.NUMBER_VAR).toBe('string')
+  process.env.NODE_ENV = 'test'
 })
