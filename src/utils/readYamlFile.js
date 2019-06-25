@@ -7,7 +7,7 @@ const NOT_FOUND_CODE = 'ENOENT'
 
 function readYamlFile (filePath) {
   try {
-    return yaml.load(fs.readFileSync(filePath, 'utf8')) || {}
+    return yaml.safeLoad(fs.readFileSync(filePath, 'utf8')) || {}
   } catch (e) {
     // Throw all errors except for file-not-found errors
     if (e.code !== NOT_FOUND_CODE) throw e

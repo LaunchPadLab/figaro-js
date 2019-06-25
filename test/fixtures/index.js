@@ -9,11 +9,15 @@ export const DEVELOPMENT_ENV = {
   SHARED_VAR: 'shared_var',
   DEVELOPMENT_VAR: 'development_var',
   OVERRIDE_VAR: 'override_var',
+  BOOLEAN_VAR: 'true',
+  NUMBER_VAR: '1',
 }
 
 export const PRODUCTION_ENV = {
   SHARED_VAR: 'shared_var',
   PRODUCTION_VAR: 'production_var',
-  OVERRIDE_VAR: 'production_override_var'
+  OVERRIDE_VAR: 'production_override_var',
+  BOOLEAN_VAR: 'true',
+  NUMBER_VAR: '1',
 }
 
