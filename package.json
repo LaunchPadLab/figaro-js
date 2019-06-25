@@ -1,6 +1,6 @@
 {
   "name": "figaro-js",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Env variable management in JS",
   "main": "lib/index.js",
   "bin": {
