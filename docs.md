@@ -2,12 +2,19 @@
 
 ### Table of Contents
 
--   [CLI](#cli)
--   [load](#load)
--   [read](#read)
--   [requireKeys](#requirekeys)
+-   [main][1]
+    -   [Parameters][2]
+-   [load][3]
+    -   [Parameters][4]
+    -   [Examples][5]
+-   [read][6]
+    -   [Parameters][7]
+    -   [Examples][8]
+-   [requireKeys][9]
+    -   [Parameters][10]
+    -   [Examples][11]
 
-## CLI
+## main
 
 This module exposes a CLI that can be run with `yarn figaro`.
 
@@ -19,10 +26,14 @@ For more information:
 
 `$ yarn figaro -h`
 
+### Parameters
+
+-   `args`   (optional, default `process.argv`)
+
 ## load
 
 A function that loads env variables into `process.env`. 
-Internally calls [read](#read) and merges the result into `process.env`.
+Internally calls [read][6] and merges the result into `process.env`.
 
 **Options**
 
@@ -31,11 +42,11 @@ Internally calls [read](#read) and merges the result into `process.env`.
 -   `path`: The path to the config file (default: './config/application.yml')
 -   `environment`: The string name of the current environment (default: 'development')
 
-**Parameters**
+### Parameters
 
--   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options for the function as specified above.
+-   `options` **[object][12]** Options for the function as specified above.
 
-**Examples**
+### Examples
 
 ```javascript
 // Let's say we've got an application.yml that looks like:
@@ -51,6 +62,8 @@ Figaro.load({
 })
 
 console.log(process.env.SOME_VAR) // -> 'FOO'
+
+*
 ```
 
 ## read
@@ -66,11 +79,11 @@ The latter will only be loaded if the current environment matches the environmen
 -   `path`: The path to the config file (default: './config/application.yml')
 -   `environment`: The string name of the current environment (default: 'development')
 
-**Parameters**
+### Parameters
 
--   `options` **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Options for the function as specified above.
+-   `options` **[object][12]** Options for the function as specified above.
 
-**Examples**
+### Examples
 
 ```javascript
 // Let's say we've got an application.yml that looks like:
@@ -92,6 +105,8 @@ console.log(myEnv)
 //   SOME_VAR: 'FOO',
 //   IS_DEV: true
 // }
+
+*
 ```
 
 ## requireKeys
@@ -99,11 +114,11 @@ console.log(myEnv)
 A function that checks to make sure certain variables have been loaded into `process.env`.
 If they exist in `process.env`, it returns `true`; if not, it throws an exception.
 
-**Parameters**
+### Parameters
 
--   `keys` **...[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The required keys
+-   `keys` **...[string][13]** The required keys
 
-**Examples**
+### Examples
 
 ```javascript
 if (requireKeys('MY_KEY', 'ANOTHER_KEY')) {
@@ -111,4 +126,32 @@ if (requireKeys('MY_KEY', 'ANOTHER_KEY')) {
 }
 
 // Above will throw if 'MY_KEY', 'ANOTHER_KEY' are not keys in process.env.
+
+*
 ```
+
+[1]: #main
+
+[2]: #parameters
+
+[3]: #load
+
+[4]: #parameters-1
+
+[5]: #examples
+
+[6]: #read
+
+[7]: #parameters-2
+
+[8]: #examples-1
+
+[9]: #requirekeys
+
+[10]: #parameters-3
+
+[11]: #examples-2
+
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
+
+[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
