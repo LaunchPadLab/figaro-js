@@ -33,7 +33,7 @@ test('throws exception if file is invalid', () => {
 })
 
 test('environment defaults to development', () => {
-  process.env.NODE_ENV = undefined
+  process.env.NODE_ENV = ''
   const env = read({
     path: CONFIG_FILE_PATH
   })
