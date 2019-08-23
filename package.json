@@ -1,6 +1,6 @@
 {
   "name": "figaro-js",
-  "version": "3.0.2",
+  "version": "3.0.3",
   "description": "Env variable management in JS",
   "main": "lib/index.js",
   "bin": {
@@ -30,7 +30,7 @@
     "lib/"
   ],
   "dependencies": {
-    "commander": "^2.19.0",
+    "commander": "^3.0.0",
     "find-root": "^1.1.0",
     "js-yaml": "^3.10.0",
     "lodash": "^4.17.15"
