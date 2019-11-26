@@ -2,19 +2,18 @@
 
 ### Table of Contents
 
--   [main][1]
-    -   [Parameters][2]
--   [load][3]
-    -   [Parameters][4]
-    -   [Examples][5]
--   [read][6]
-    -   [Parameters][7]
-    -   [Examples][8]
--   [requireKeys][9]
-    -   [Parameters][10]
-    -   [Examples][11]
+-   [CLI][1]
+-   [load][2]
+    -   [Parameters][3]
+    -   [Examples][4]
+-   [read][5]
+    -   [Parameters][6]
+    -   [Examples][7]
+-   [requireKeys][8]
+    -   [Parameters][9]
+    -   [Examples][10]
 
-## main
+## CLI
 
 This module exposes a CLI that can be run with `yarn figaro`.
 
@@ -26,14 +25,10 @@ For more information:
 
 `$ yarn figaro -h`
 
-### Parameters
-
--   `args`   (optional, default `process.argv`)
-
 ## load
 
 A function that loads env variables into `process.env`. 
-Internally calls [read][6] and merges the result into `process.env`.
+Internally calls [read][5] and merges the result into `process.env`.
 
 **Options**
 
@@ -44,7 +39,7 @@ Internally calls [read][6] and merges the result into `process.env`.
 
 ### Parameters
 
--   `options` **[object][12]** Options for the function as specified above.
+-   `options` **[object][11]** Options for the function as specified above.
 
 ### Examples
 
@@ -81,7 +76,7 @@ The latter will only be loaded if the current environment matches the environmen
 
 ### Parameters
 
--   `options` **[object][12]** Options for the function as specified above.
+-   `options` **[object][11]** Options for the function as specified above.
 
 ### Examples
 
@@ -116,7 +111,7 @@ If they exist in `process.env`, it returns `true`; if not, it throws an exceptio
 
 ### Parameters
 
--   `keys` **...[string][13]** The required keys
+-   `keys` **...[string][12]** The required keys
 
 ### Examples
 
@@ -130,28 +125,26 @@ if (requireKeys('MY_KEY', 'ANOTHER_KEY')) {
 *
 ```
 
-[1]: #main
+[1]: #cli
 
-[2]: #parameters
+[2]: #load
 
-[3]: #load
+[3]: #parameters
 
-[4]: #parameters-1
+[4]: #examples
 
-[5]: #examples
+[5]: #read
 
-[6]: #read
+[6]: #parameters-1
 
-[7]: #parameters-2
+[7]: #examples-1
 
-[8]: #examples-1
+[8]: #requirekeys
 
-[9]: #requirekeys
+[9]: #parameters-2
 
-[10]: #parameters-3
+[10]: #examples-2
 
-[11]: #examples-2
+[11]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
 
-[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object
-
-[13]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
+[12]: https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String
