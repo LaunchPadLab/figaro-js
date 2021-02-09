@@ -42,7 +42,7 @@
     "@launchpadlab/eslint-config": "^2.2.3",
     "documentation": "^12.0.3",
     "eslint": "^6.1.0",
-    "husky": "^3.0.1",
+    "husky": "^5.0.0",
     "jest": "^24.8.0"
   }
 }
