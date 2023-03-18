@@ -30,7 +30,7 @@
     "lib/"
   ],
   "dependencies": {
-    "commander": "^3.0.0",
+    "commander": "^10.0.0",
     "find-root": "^1.1.0",
     "js-yaml": "^3.10.0",
     "lodash": "^4.17.15"
