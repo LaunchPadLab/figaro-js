@@ -36,7 +36,7 @@
     "lodash": "^4.17.15"
   },
   "devDependencies": {
-    "@babel/cli": "^7.5.5",
+    "@babel/cli": "^8.0.0",
     "@babel/core": "^7.5.5",
     "@launchpadlab/babel-preset": "^2.1.0",
     "@launchpadlab/eslint-config": "^2.2.3",
